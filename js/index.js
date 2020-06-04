@@ -41,9 +41,53 @@ const siteContent = {
     copyright: "Copyright Great Idea! 2018",
   },
 };
+let s = siteContent;
 
-const logo = document.getElementById("logo-img");
-logo.setAttribute("src", siteContent["nav"]["img-src"]);
+let logo = document.getElementById("logo-img");
+logo.setAttribute("src", s["nav"]["img-src"]);
 
-const headerImg = document.getElementById("cta-img");
-headerImg.setAttribute("src", siteContent["cta"]["img-src"]);
+let headerImg = document.getElementById("cta-img");
+headerImg.setAttribute("src", s["cta"]["img-src"]);
+
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", s["main-content"]["middle-img-src"]);
+
+let navBar = document.querySelectorAll("nav a");
+navBar.forEach((value, index) => {
+  value.textContent = s.nav[`nav-item-${index + 1}`];
+});
+
+let ctaH1 = document.querySelector(".cta-text h1");
+ctaH1.textContent = s.cta.h1;
+
+let ctaBtn = document.querySelector(".cta-text button");
+ctaBtn.textContent = s.cta.button;
+
+let topH4 = document.querySelectorAll(".main-content .top-content h4");
+topH4[0].textContent = s["main-content"]["features-h4"];
+topH4[1].textContent = s["main-content"]["about-h4"];
+
+let bottomH4 = document.querySelectorAll(".main-content .bottom-content h4");
+bottomH4[0].textContent = s["main-content"]["services-h4"];
+bottomH4[1].textContent = s["main-content"]["product-h4"];
+bottomH4[2].textContent = s["main-content"]["vision-h4"];
+
+let topP = document.querySelectorAll(".main-content .top-content p");
+topP[0].textContent = s["main-content"]["features-content"];
+topP[1].textContent = s["main-content"]["about-content"];
+
+let bottomP = document.querySelectorAll(".main-content .bottom-content p");
+bottomP[0].textContent = s["main-content"]["services-content"];
+bottomP[1].textContent = s["main-content"]["product-content"];
+bottomP[2].textContent = s["main-content"]["vision-content"];
+
+let contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = s["contact"]["contact-h4"];
+
+let contactP = document.querySelectorAll(".contact p");
+contactP[0].textContent = s["contact"]["address"];
+contactP[1].textContent = s["contact"]["phone"];
+contactP[2].textContent = s["contact"]["email"];
+
+let footer = document.querySelector("footer p");
+footer.textContent = s.footer.copyright;
