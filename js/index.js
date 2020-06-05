@@ -57,6 +57,15 @@ navBar.forEach((value, index) => {
   value.textContent = s.nav[`nav-item-${index + 1}`];
 });
 
+// let test = document.createTextNode("Test");
+// navBar.appendChild(test);
+// document.body.prepend(navBar);
+
+let navText = document.querySelectorAll("header nav a");
+navText.forEach((value) => {
+  value.style.color = "green";
+});
+
 let ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = s.cta.h1;
 
