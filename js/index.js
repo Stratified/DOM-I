@@ -57,14 +57,21 @@ navBar.forEach((value, index) => {
   value.textContent = s.nav[`nav-item-${index + 1}`];
 });
 
-// let test = document.createTextNode("Test");
-// navBar.appendChild(test);
-// document.body.prepend(navBar);
-
 let navText = document.querySelectorAll("header nav a");
 navText.forEach((value) => {
   value.style.color = "green";
 });
+
+const nav = document.getElementsByTagName("nav")[0];
+const home = document.createElement("a");
+home.textContent = "Home";
+home.style.color = "green";
+nav.prepend(home);
+
+const other = document.createElement("a");
+other.textContent = "Other";
+other.style.color = "green";
+nav.appendChild(other);
 
 let ctaH1 = document.querySelector(".cta-text h1");
 ctaH1.textContent = s.cta.h1;
